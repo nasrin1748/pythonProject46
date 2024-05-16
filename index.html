@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--<style>
+    body {
+        background-color: blue;
+    }
+</style>-->
+<head>
+    <title>Noisy Math</title>
+
+    <!-- Recommended meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- PyScript CSS -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
+
+    <!-- This script tag bootstraps PyScript -->
+    <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/mode/javascript/javascript.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<pre>
+<textarea id="ta">
+import pandas as pd
+print("hello World")
+print("hello")
+print("hello World")
+import js
+x = js.input()
+print(x)
+
+</textarea>
+</pre>
+     <p>
+<button id="run" onclick='click_handler'>Run</button>
+<button id="clearTerm">Click to Clear</button>
+
+<!--    <input type='button'
+           value='Get Value' id='bt' onclick='get_textarea_value()' />-->
+  </p>
+</head>
+<body>
+    <script type="py" config="./pyscript.toml" terminal>
+from pyscript import when, display,document
+@when("click","#clearTerm")
+def clearTerm(evt):
+    print('\x1bc')
+@when("click", "#run")
+def click_handler(event):
+    #exec(open("main.py").read())
+    #'''f = document.getElementById("ta").value
+    #print(type(f))
+    #print(f)
+    #'''exec(f)
+    #display(exec(f))
+    #print(exec(f))
+    #f = open('main.py', 'r')
+    #file_contents = f.read()
+    #print(file_contents)
+    #print(eval(f))
+    #print(eval(print("hello")))
+    #f.close()
+    import js
+    result = js.get_textarea_value()
+    exec(result)
+    #print("hello")'''
+    </script>
+</body>
+    <script src='main.js'></script>
+
+</html>
